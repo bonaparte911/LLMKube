@@ -83,7 +83,9 @@ var additions = map[string][]route{
 	},
 	inferencev1alpha1.RuntimeMLXServer:  nil,
 	inferencev1alpha1.RuntimeTensorFold: nil,
-	inferencev1alpha1.RuntimeOMLX:       nil,
+	inferencev1alpha1.RuntimeOMLX: {
+		{"POST", "/v1/rerank"},
+	},
 }
 
 func TestAllowedPositive(t *testing.T) {
