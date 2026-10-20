@@ -110,7 +110,9 @@ var runtimeAllowed = map[string]map[routeKey]struct{}{
 	),
 	inferencev1alpha1.RuntimeMLXServer:  {},
 	inferencev1alpha1.RuntimeTensorFold: {},
-	inferencev1alpha1.RuntimeOMLX:       {},
+	inferencev1alpha1.RuntimeOMLX: routes(
+		http.MethodPost, "/v1/rerank",
+	),
 }
 
 // Allowed reports whether the ingress may forward method + rawPath to an
